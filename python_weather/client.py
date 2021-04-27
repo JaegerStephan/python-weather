@@ -80,6 +80,7 @@ class Client:
         response.close()
         
         self._store_cache(location, content)
+        await self.close()
         return Weather(content)
     
     async def close(self) -> None:
